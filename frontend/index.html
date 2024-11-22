@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskMaster</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>TaskMaster</h1>
+  </header>
+
+  <main>
+    <!-- Login/Register Section -->
+    <section id="auth-section">
+      <h2>Login / Register</h2>
+      <form id="auth-form">
+        <input type="text" id="username" placeholder="Username" autocomplete="username" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" autocomplete="current-password" required>
+        <button type="submit" id="login-btn">Login</button>
+        <button type="button" id="register-btn">Register</button> <!-- Keep this as button for manual submission -->
+      </form>
+    </section>
+
+    <!-- Task Management Section -->
+    <section id="task-section" style="display: none;">
+      <h2>Your Tasks</h2>
+
+      <!-- Task Creation -->
+      <form id="task-form">
+        <input type="text" id="task-title" placeholder="Task Title" required>
+        <textarea id="task-desc" placeholder="Task Description"></textarea>
+        <input type="date" id="task-deadline" required>
+        <select id="task-priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <button type="submit">Add Task</button>
+      </form>
+
+      <!-- Task Filters -->
+      <div id="filters">
+        <label for="priority-filter">Filter by Priority:</label>
+        <select id="priority-filter">
+          <option value="">All</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <label for="search-bar">Search:</label>
+        <input type="text" id="search-bar" placeholder="Search tasks...">
+      </div>
+
+      <!-- Task List -->
+      <ul id="task-list"></ul>
+    </section>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
